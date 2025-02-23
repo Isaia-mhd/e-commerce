@@ -1,47 +1,51 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.Layout')
 
-    <form method="POST" action="{{ route('login') }}">
+@section("title")
+    Login
+@endsection
+
+@section('content')
+
+    {{-- Little Title --}}
+    <h1 class="text-center text-2xl font-semibold text-white">Login</h1>
+
+    {{-- Field --}}
+    <form action="{{route("login")}}" method="post" class="w-full mt-6 py-7 rounded-lg shadow-md max-w-[90%] sm:max-w-[70%] md:max-w-[40%] lg:max-w-[30%] mx-auto">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        {{-- Email --}}
+        <div class="w-full flex flex-col gap-1 mb-3">
+            <label for="email" class="text-sm text-white font-semibold">Email</label>
+            <input class="ww-full bg-slate-900 text-white rounded py-2 px-2 outline-none " type="email" name="email" id="email" placeholder="E-mail">
+            @error("email")
+                <span class="text-red-500 text-sm"> {{ $message }} </span>
+            @enderror
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        {{-- Password --}}
+        <div class="w-full flex flex-col gap-1 mb-3">
+            <label for="password" class="text-sm text-white font-semibold">Password</label>
+            <input class="w-full bg-slate-900 text-white rounded py-2 px-2 outline-none" type="password" name="password" id="password" placeholder="Password">
+            @error("password")
+                <span class="text-red-500 text-sm"> {{ $message }} </span>
+            @enderror
         </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
+        {{-- LOgin Button --}}
+        <div class="w-full mb-2">
+            <button class="transition duration-150 ease-in-out py-2 px-7 rounded-md text-sm  text-white uppercase bg-gradient-to-r from-indigo-800 to-emerald-600 hover:from-indigo-900 hover:to-emerald-700" type="submit">Login</button>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+        {{-- Link Register/forgot PW --}}
+        <div class="w-full flex items-center justify-between mb-2">
+            <a href="{{route('register')}}" class="text-sm text-white">Don-t have an account ? <span class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out">Register</span></a>
+            <a href="" class="text-sm text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out ">Forgot password ?</a>
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
         </div>
+
+        {{-- Google Oauth --}}
+        @include("auth.google_oauth")
+        @include("components.error")
     </form>
-</x-guest-layout>
+
+@endsection

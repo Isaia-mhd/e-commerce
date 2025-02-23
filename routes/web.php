@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
+})->name("home");
+
+// AUTHENTICATION
+Route::middleware(['guest'])->group(function () {
+    Route::get("/register", [RegisteredUserController::class, "create"])->name("register");
+    Route::get("/register", [RegisteredUserController::class, "store"])->name("store");
+    Route::get("/login", [AuthenticatedSessionController::class, "create"])->name("login");
+
 });
+
+
+
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
