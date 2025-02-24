@@ -39,7 +39,7 @@
         {{-- Link Register/forgot PW --}}
         <div class="w-full flex items-center justify-between mb-2">
             <a href="{{route('register')}}" class="text-sm text-white">Don-t have an account ? <span class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out">Register</span></a>
-            <a href="" class="text-sm text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out ">Forgot password ?</a>
+            <a href="{{ route("password.request") }}" class="text-sm text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out ">Forgot password ?</a>
 
         </div>
 

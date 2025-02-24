@@ -8,7 +8,7 @@
     <h1 class="text-center text-2xl font-semibold text-white">Register</h1>
 
     {{-- Field --}}
-    <form action="{{ route('register') }}" method="post"
+    <form action="{{ route('store') }}" method="post"
         class="w-full mt-6 py-7 rounded-lg shadow-md max-w-[90%]  lg:max-w-[70%] mx-auto">
         @csrf
 
@@ -160,7 +160,7 @@
         <div class="flex items-center justify-between w-full">
             <a href="{{ route('login') }}" class="text-sm text-white">Have an account ? <span
                     class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out">Login</span></a>
-            <a href="" class="text-sm text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out">Forgot
+            <a href="{{ route("password.request") }}" class="text-sm text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out">Forgot
                 password ?</a>
 
         </div>

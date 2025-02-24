@@ -52,10 +52,10 @@
                                         href="{{ route("register")}}">Register</a></li>
                             @endguest
                             @auth
-                                <li class="flex items-center justify-center gap-1  text-blue-950 font-semibold text-sm"><i></i><a href="">Profile</a></li>
-                                <li class="flex items-center justify-center gap-1  text-blue-950 font-semibold text-sm"><i
+                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm"><i></i><a href="">Profile</a></li>
+                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm"><i
                                     class="fa-solid fa-cart-shopping"></i><a href="">20$</a></li>
-                                <form action="" method="post">
+                                <form action="{{  route("logout")}}" method="POST">
                                     @csrf
                                     <button type="submit" class="text-red-500 text-sm font-semibold flex items-center justify-center gap-2" title="Logout"><i class="fa-solid fa-power-off"></i>Logout</button>
                                 </form>
