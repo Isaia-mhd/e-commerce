@@ -102,9 +102,13 @@
     <footer class="w-full bg-slate-900">
         <div class="w-full max-w-xl mx-auto  h-[250px] flex justify-center items-center flex-col gap-8 bg-slate-900">
             <h1 class="uppercase text-white text-2xl">Subscribe To Our Newsletter</h1>
-            <form method="post" action="" class="w-[80%] md:w-full flex items-center justify-center gap-1">
-                <input type="email" name="" id="" placeholder="Enter your Email address"
+            <form method="post" action="{{ route("subscribe") }}" class="w-[80%] md:w-full flex items-center justify-center gap-1">
+                @csrf
+                <input type="email" name="subscribe" placeholder="Enter your Email address"
                     class="w-full h-[48px] px-3 rounded-sm outline-none">
+                @error('subscribe')
+                    <span class="text-red-500 text-sm"> {{ $message }} </span>
+                @enderror
                 <button type="submit"
                     class="bg-slate-800 text-white text-sm h-[48px] px-4 rounded-sm">Subscribe</button>
             </form>

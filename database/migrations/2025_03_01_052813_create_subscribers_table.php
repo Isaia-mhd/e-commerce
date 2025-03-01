@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->text("country")->nullable();
+            $table->string("email")->unique();
+            $table->timestamps();
         });
     }
 
@@ -22,7 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('country');
-
+        Schema::dropIfExists('subscribers');
     }
 };

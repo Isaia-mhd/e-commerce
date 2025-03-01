@@ -50,7 +50,7 @@
 
         {{-- LOgin Button --}}
         <div class="w-full max-w-[90%] mx-auto">
-            <button class="transition duration-150 ease-in-out py-2 px-7 rounded-md text-sm  text-white uppercase bg-gradient-to-r from-indigo-800 to-emerald-600 hover:from-indigo-900 hover:to-emerald-700 uppercase" type="submit">Email Password Reset Link</button>
+            <button class="transition duration-150 ease-in-out py-2 px-7 rounded-md text-sm  text-white uppercase bg-gradient-to-r from-indigo-800 to-emerald-600 hover:from-indigo-900 hover:to-emerald-700" type="submit">Email Password Reset Link</button>
         </div>
 
         {{-- Link Register/forgot PW --}}
