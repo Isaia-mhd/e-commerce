@@ -4,13 +4,12 @@
     Shopping
 @endsection
 @section('u-title')
-    Shopping
+    Category: 
 @endsection
 @section('content')
     <div class="w-full max-w-[85%] mx-auto flex flex-col md:flex-row justify-start gap-8">
         {{-- LIST OF TOP Categories --}}
-       @include("products.topCategoryList")
-       
+        @include("products.topCategoryList")
 
         {{-- PRODUCT --}}
         <div class="space-y-3">

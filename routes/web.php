@@ -30,6 +30,8 @@ Route::get("/auth/google/callback", [googleOauthController::class, "googleCallba
 
 // PRODUCTS
 Route::get("/shopping", [ProductController::class, "index",])->name("shop");
+Route::get("/shopping/{slug}", [ProductController::class, "getTopCategories",])->name("top-category");
+
 
 
 
