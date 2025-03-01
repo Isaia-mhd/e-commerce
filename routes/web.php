@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Socialite\googleOauthController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,9 @@ Route::get('/', function () {
 
 Route::post("/subscribe", [SubscriberController::class, "subscribe"])->name("subscribe");
 
+// GOOGLE OAUTH
+Route::get("/auth/google", [googleOauthController::class, "googleRedirect",])->name("google.login");
+Route::get("/auth/google/callback", [googleOauthController::class, "googleCallback",]);
 
 
 

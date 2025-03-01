@@ -74,7 +74,7 @@
         <div class="w-full h-[30%] bg-slate-900 border-t-[1px] border-slate-700">
             <ul
                 class="w-full max-w-6xl mx-auto h-[65px] text-white text-sm truncate flex justify-start items-center gap-8">
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">Home</a></li>
+                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="/">Home</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
                         href="">Men</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
@@ -99,6 +99,7 @@
     <section class="bg-slate-950 py-6">
         @yield('content')
     </section>
+
     <footer class="w-full bg-slate-900">
         <div class="w-full max-w-xl mx-auto  h-[250px] flex justify-center items-center flex-col gap-8 bg-slate-900">
             <h1 class="uppercase text-white text-2xl">Subscribe To Our Newsletter</h1>
