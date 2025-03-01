@@ -1,11 +1,14 @@
 @extends('layouts.Layout')
-@section("title")
+@section('title')
     Home
 @endsection
 
-@section('content')
-<div class="container">
+@section("u-title")
     Home
-    @include("components.success")
-</div>
+@endsection
+@section('content')
+    <div class="container">
+        @include('components.success')
+
+    </div>
 @endsection

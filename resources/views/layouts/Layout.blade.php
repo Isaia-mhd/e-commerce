@@ -75,6 +75,7 @@
             <ul
                 class="w-full max-w-6xl mx-auto h-[65px] text-white text-sm truncate flex justify-start items-center gap-8">
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="/">Home</a></li>
+                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="{{ route("shop") }}">Shopping</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
                         href="">Men</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
@@ -92,7 +93,9 @@
         </div>
 
     </header>
-    @yield('u-title')
+    <div class="text-white bg-black w-full h-[50px] flex items-center justify-center">
+        @yield('u-title')
+    </div>
 
 
 

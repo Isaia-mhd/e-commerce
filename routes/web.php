@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\RegisteredUserController;
+
+use App\Http\Controllers\Products\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Socialite\googleOauthController;
 use App\Http\Controllers\SubscriberController;
@@ -28,6 +28,8 @@ Route::post("/subscribe", [SubscriberController::class, "subscribe"])->name("sub
 Route::get("/auth/google", [googleOauthController::class, "googleRedirect",])->name("google.login");
 Route::get("/auth/google/callback", [googleOauthController::class, "googleCallback",]);
 
+// PRODUCTS
+Route::get("/shopping", [ProductController::class, "index",])->name("shop");
 
 
 
