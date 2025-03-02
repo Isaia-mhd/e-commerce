@@ -1,16 +1,20 @@
 @extends("layouts.Layout")
 @section("title")
-    Prouct name
+{{ Str::title($product->name) }} 
 @endsection
 @section("u-title")
-    Prod name
+    Category : <p class="text-white">{{ $product->endCategories->end_category }}</p>
 @endsection
 @section("content")
-    <p class="text-blue-700">
-        <a href="{{route("shop") }}">Shopping</a> > 
-        <a href=""> {{ $product->topCategories->top_category }} </a>
-        <a href=""></a>
-        <a href=""></a>
-    </p>
-    <h2 class="text-red-500"> Titre: {{ $product->name }} </h2>
+
+    {{-- path link at the top --}}
+    <div class="">
+        <p class="text-blue-700">
+            <a href="{{route("shop") }}">Shopping</a> > 
+            <a href=""> {{ $product->topCategories->top_category }} </a> >
+            <a href="">{{ $product->midCategories->mid_category }}</a> >
+            <a href="">{{ $product->endCategories->end_category }}</a> >
+            <a href="">{{ $product->name }}</a>
+        </p>
+    </div>
 @endsection

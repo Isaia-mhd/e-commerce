@@ -17,8 +17,16 @@ class Product extends Model
         "updated_at"
     ];
 
-    public function topCategories(): HasOne
+    public function topCategories(): BelongsTo
     {
-        return $this->hasOne(TopCategory::class, "topCategory_id");
+        return $this->belongsTo(TopCategory::class, "top_category_id");
+    }
+    public function midCategories(): BelongsTo
+    {
+        return $this->belongsTo(midCategory::class, "mid_category_id");
+    }
+    public function endCategories(): BelongsTo
+    {
+        return $this->belongsTo(endCategory::class, "end_category_id");
     }
 }
