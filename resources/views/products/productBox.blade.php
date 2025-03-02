@@ -14,7 +14,7 @@
                     <strike class="text-gray-600">${{ $product->old_price }}</strike>
                 </div>
 
-                <a href="{{ route("show", $product->id) }}" class="bg-blue-400 w-[100px] py-1 text-white font-semibold rounded-sm">Add to Cart</a>
+                <a href="{{ route("show", $product->id) }}" class="bg-blue-500 w-[100px] py-1 text-white font-semibold">Add to Cart</a>
             </div>
         </div>
     @endforeach

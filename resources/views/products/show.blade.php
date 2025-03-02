@@ -9,7 +9,7 @@
     @include("components.success")
     {{-- path link at the top --}}
     <div class="w-full max-w-[85%] mx-auto">
-        <p class="text-blue-700">
+        <p class="text-blue-400">
             <a href="{{route("shop") }}">Shopping</a> >
             <a href=""> {{ $product->topCategories->top_category }} </a> >
             <a href="">{{ $product->midCategories->mid_category }}</a> >
@@ -53,7 +53,7 @@
                     <input type="number" name="quantity" min="1" id="quant" class="w-20 bg-slate-800 text-white">
                 </div>
                 {{-- Button add to cart --}}
-                <button type="submit" class="bg-blue-700 rounded-sm text-white px-3 font-semibold py-1">Add To Cart</button>
+                <button type="submit" class="bg-blue-500 rounded-sm text-white px-3 font-semibold py-1">Add To Cart</button>
 
             </div>
         </form>
