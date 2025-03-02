@@ -6,14 +6,15 @@
             <div class=""></div>
 
             {{-- prod details --}}
-            <div class="text-center flex flex-col gap-2 justify-center">
+            <div class="text-center flex flex-col gap-2 justify-center items-center">
                 <p class="text-black text-lg font-semibold"> {{ $product->name }} </p>
 
                 <div class="h-[50px]">
                     <span class="text-black font-bold text-2xl">${{ $product->price }}</span>
                     <strike class="text-gray-600">${{ $product->old_price }}</strike>
                 </div>
-                <a href="{{ route("show", $product->id) }}" class="bg-blue-400 py-2 text-white font-semibold rounded-sm">Add to Cart</a>
+
+                <a href="{{ route("show", $product->id) }}" class="bg-blue-400 w-[100px] py-1 text-white font-semibold rounded-sm">Add to Cart</a>
             </div>
         </div>
     @endforeach

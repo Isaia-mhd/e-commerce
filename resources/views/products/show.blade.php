@@ -6,7 +6,7 @@
     Category : <p class="text-white">{{ $product->endCategories->end_category }}</p>
 @endsection
 @section("content")
-
+    @include("components.success")
     {{-- path link at the top --}}
     <div class="w-full max-w-[85%] mx-auto">
         <p class="text-blue-700">
