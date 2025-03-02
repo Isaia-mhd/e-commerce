@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Products\CategoryController;
 use App\Http\Controllers\Products\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Socialite\googleOauthController;
@@ -25,13 +25,16 @@ Route::get('/', function () {
 Route::post("/subscribe", [SubscriberController::class, "subscribe"])->name("subscribe");
 
 // GOOGLE OAUTH
-Route::get("/auth/google", [googleOauthController::class, "googleRedirect",])->name("google.login");
-Route::get("/auth/google/callback", [googleOauthController::class, "googleCallback",]);
+    Route::get("/auth/google", [googleOauthController::class, "googleRedirect",])->name("google.login");
+    Route::get("/auth/google/callback", [googleOauthController::class, "googleCallback",]);
 
 // PRODUCTS
-Route::get("/shopping", [ProductController::class, "index",])->name("shop");
-Route::get("/shopping/{slug}", [ProductController::class, "getTopCategories",])->name("top-category");
-Route::get("/shopping/view/product-{product}", [ProductController::class, "show",])->name("show");
+    Route::get("/shopping", [ProductController::class, "index",])->name("shop");
+    Route::get("/shopping/{slug}", [ProductController::class, "getTopCategories",])->name("top-category");
+    Route::get("/shopping/view/product-{product}", [ProductController::class, "show",])->name("show");
+    // For link path at the show page
+    Route::get("/shopping/{slug}/{category}", [CategoryController::class, "getMidCategories",])->name("mid-category");
+    Route::get("/shopping/{slug}/{midCategory}/{endCategory}", [CategoryController::class, "getEndCategories",])->name("end-category");
 
 
 

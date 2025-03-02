@@ -17,13 +17,13 @@ class ProductController extends Controller
     public function getTopCategories($slug){
 
         // to get the topCategory id of this slug
-        $cat = TopCategory::where("slug", $slug)->first();
+        $topCategory = TopCategory::where("slug", $slug)->first();
 
 
-        $products = Product::where("top_category_id", $cat->id)->paginate(15);
+        $products = Product::where("top_category_id", $topCategory->id)->paginate(15);
 
         $categories = TopCategory::all();
-        return view("products.top_category", compact( "categories", "products"));
+        return view("products.top_category", compact( "categories", "products", "topCategory"));
     }
 
     public function show($product){

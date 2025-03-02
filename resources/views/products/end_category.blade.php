@@ -1,10 +1,10 @@
 @extends('layouts.Layout')
 
 @section('title')
-    {{ $topCategory->top_category }}
+    {{ $endCategory->end_category }}
 @endsection
 @section('u-title')
-    Category: {{ $topCategory->top_category }}
+    Category: {{ $endCategory->end_category }}
 @endsection
 @section('content')
     @include("components.success")
