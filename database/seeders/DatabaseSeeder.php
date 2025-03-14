@@ -20,8 +20,14 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            TopCatSeeder::class,
+            MidCatSeeder::class,
+            EndCatSeeder::class,
+            SizeSeeder::class,
+            ColorSeeder::class,
+            CountrySeeder::class,
             ProductSeeder::class,
-            //
+            
         ]);
     }
 }
