@@ -3,7 +3,7 @@
 {{ Str::title($product->name) }}
 @endsection
 @section("u-title")
-    Category : {{ $product->endCategories->end_category }}
+Category : <p class="text-green-500"> {{ $product->endCategories->end_category }}</p>
 @endsection
 @section("content")
     @include("components.success")

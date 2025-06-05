@@ -20,9 +20,11 @@ class ProductController extends Controller
         $topCategory = TopCategory::where("slug", $slug)->first();
 
 
-        $products = Product::where("top_category_id", $topCategory->id)->paginate(15);
+        $products = Product::where("top_category_id", 1)->paginate(15);
 
-        $categories = TopCategory::all();
+        $categories = TopCategory::orderBy("created_at", "ASC")->get();
+        // dd($topCategory, $categories);
+
         return view("products.top_category", compact( "categories", "products", "topCategory"));
     }
 
@@ -35,5 +37,18 @@ class ProductController extends Controller
                             ->paginate(6);
 
         return view("products.show", compact("product", "products"));
+    }
+    public function search()
+    {
+
+        $keyword = request()->search;
+        $categories = TopCategory::all();
+
+        $products = Product::where("name", "like", "%".$keyword."%")
+        ->orWhere("description", "like", "%".$keyword."%")
+        ->paginate(12);
+
+        return view("products.searched", compact("categories", "products"));
+
     }
 }

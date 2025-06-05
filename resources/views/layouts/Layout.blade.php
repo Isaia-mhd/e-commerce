@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="../../../css/app.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/30b351febc.js" crossorigin="anonymous"></script>
     <title>@yield("title") | E-Commerce </title>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
@@ -38,8 +38,10 @@
         {{-- Main nav --}}
         <div class="w-full py-2">
             <div class="w-full max-w-6xl mx-auto lg:flex justify-between items-center">
-                <div class="w-[100%] flex justify-center lg:justify-start items-center"><img class=""
-                        src="/Logo.png" alt="logo"></div>
+                <div class="w-[100%] flex justify-center lg:justify-start items-center text-blue-500 text-2xl">
+                    {{-- <img class="" src="/Logo.png" alt="Logo"> --}}
+                    {{ config("app.name") }}
+                </div>
                 <div class="w-[100%]  flex flex-col justify-center  items-center gap-2 lg:flex-row">
                     <div class=" w-full">
                         <ul class="w-[100%] mx-auto flex justify-center items-center gap-5">
@@ -76,16 +78,6 @@
                 class="w-full max-w-6xl mx-auto h-[65px] text-white text-sm truncate flex justify-start items-center gap-8">
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="/">Home</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="{{ route("shop") }}">Shopping</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
-                        href="">Men</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
-                        href="">Women</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
-                        href="">Kids</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
-                        href="">Electronics</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a
-                        href="">Health and Household</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">About Us</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">Contact Us</a></li>
                 <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">FAQs</a></li>

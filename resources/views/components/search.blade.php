@@ -1,6 +1,6 @@
-<form action="" method="POST" class="w-full flex justify-center items-center gap-5">
+<form action="{{ route("search") }}" method="POST" class="w-full flex justify-center items-center gap-5">
     @csrf
-    <input type="search" name="search" value=""
+    <input type="search" name="search" value="{{ request()->get('search') }}"
     class="w-[200px] px-3 py-2 text-xs rounded-md border-2 focus:outline-none"
     placeholder="What are you looking for... ?">
     <button
