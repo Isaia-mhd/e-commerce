@@ -18,6 +18,10 @@
             <p class="text-2xl text-white">{{ $endCategory->end_category }} products</p>
             {{-- ALL PRODUCTS BOX --}}
             @include("products.productBox")
+
+            {{-- Pagination LINK --}}
+            @include('components.paginationLinks')
+
         </div>
     </div>
 @endsection

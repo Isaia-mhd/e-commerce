@@ -18,6 +18,9 @@
             <p class="text-2xl text-white">{{ $topCategory->top_category }} products</p>
             {{-- ALL PRODUCTS BOX --}}
             @include("products.productBox")
+
+            {{-- Pagination LINK --}}
+            @include('components.paginationLinks')
         </div>
     </div>
 @endsection

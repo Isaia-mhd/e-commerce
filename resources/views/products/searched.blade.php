@@ -19,6 +19,10 @@
             <p class="text-2xl text-white">The results of {{ request()->get('search') }}</p>
             {{-- ALL PRODUCTS BOX --}}
             @include("products.productBox")
+
+            {{-- Pagination LINK --}}
+            @include('components.paginationLinks')
+            
             @if (count($products) == 0)
                 <div class="w-full h-full  flex justify-center items-center">
                     <p class="text-lg text-amber-400">No results founds</p>

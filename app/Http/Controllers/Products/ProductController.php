@@ -14,10 +14,10 @@ class ProductController extends Controller
 {
     public function index(Request $request){
 
-        $categories = Cache::remember("tops-cat", 3600, fn() => TopCategory::all());
+        $categories = Cache::remember("tops-cat", 20, fn() => TopCategory::all());
 
         $page = $request->get("page", 1);
-        $products = Cache::remember("products-page-$page", 3600, fn() => Product::where("active", true)->paginate(12));
+        $products = Cache::remember("products-page-$page", 20, fn() => Product::where("active", true)->paginate(12));
 
         return view("products.all_products", compact("categories", "products"));
     }
@@ -28,9 +28,9 @@ class ProductController extends Controller
         $topCategory = TopCategory::where("slug", $slug)->first();
 
         $page = request()->get('page', 1);
-        $products = Cache::remember("products-page-$page", 3600 ,fn() => Product::where("top_category_id", $topCategory->id)->paginate(15));
+        $products = Cache::remember("products-page-$page", 20,fn() => Product::where("top_category_id", $topCategory->id)->paginate(15));
 
-        $categories = Cache::remember("topCategories", 3600, fn() => TopCategory::oldest()->get());
+        $categories = Cache::remember("topCategories", 20, fn() => TopCategory::oldest()->get());
 
         return view("products.top_category", compact( "categories", "products", "topCategory"));
     }

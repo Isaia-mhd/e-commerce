@@ -8,6 +8,7 @@ use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -33,11 +34,24 @@ class ProductResource extends Resource
                 Textarea::make("description")->columnSpanFull(),
                 TextInput::make("price"),
                 TextInput::make("old_price"),
-                TextInput::make("top_category_id"),
-                TextInput::make("mid_category_id"),
-                TextInput::make("end_category_id"),
-                TextInput::make("color_id"),
-                TextInput::make("size_id"),
+                Select::make("top_category_id")
+                ->label("Top Categorie")
+                ->options(\App\Models\TopCategory::all()->pluck("top_category", "id"))
+                ->required(),
+                Select::make("mid_category_id")
+                ->label("Mid Categorie")
+                ->options(\App\Models\MidCategory::all()->pluck("mid_category", "id"))
+                ->required(),
+                Select::make("end_category_id")
+                ->label("End Categorie")
+                ->options(\App\Models\EndCategory::all()->pluck("end_category", "id"))
+                ->required(),
+                Select::make("color_id")
+                ->label("Color")
+                ->options(\App\Models\Color::all()->pluck("color", "id")),
+                Select::make("size_id")
+                ->label("Size")
+                ->options(\App\Models\Size::all()->pluck("size", "id")),
                 Checkbox::make("isOffered"),
                 Checkbox::make("active"),
                 FileUpload::make("image"),

@@ -18,9 +18,9 @@
     {{-- HEADER --}}
     <header class="w-full bg-slate-900">
         {{-- top header --}}
-        <div class="w-full">
+        <div class="w-full max-w-[90%] lg:max-w-[80%] mx-auto">
             <div
-                class="w-full h-[100%] max-w-6xl lg:max-w-6xl mx-auto flex flex-col justify-center gap-5 items-center md:flex-row">
+                class="w-full h-[100%] flex flex-col justify-center gap-5 items-center md:flex-row">
                 <div class="w-full text-center lg:flex justify-start items-center gap-5 py-2">
                     <p class="text-white text-sm">+001 10 101 0010</p>
                     <p class="text-white text-sm">support@ecommercephp.com</p>
@@ -36,8 +36,8 @@
         </div>
 
         {{-- Main nav --}}
-        <div class="w-full py-2">
-            <div class="w-full max-w-6xl mx-auto lg:flex justify-between items-center">
+        <div class="w-full py-2 max-w-[90%] lg:max-w-[80%] mx-auto">
+            <div class="w-full lg:flex justify-between items-center">
                 <div class="w-[100%] flex justify-center lg:justify-start items-center text-blue-500 text-2xl">
                     {{-- <img class="" src="/Logo.png" alt="Logo"> --}}
                     {{ config("app.name") }}
@@ -46,11 +46,9 @@
                     <div class=" w-full">
                         <ul class="w-[100%] mx-auto flex justify-center items-center gap-5">
                             @guest
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium"><i
-                                        class="fa-solid fa-right-to-bracket"></i><a
+                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium {{ Route::is("login") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><a
                                         href="{{ route("login")}}">Login</a></li>
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium"><i
-                                        class="fa-solid fa-user-plus"></i><a
+                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium {{ Route::is("register") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><a
                                         href="{{ route("register")}}">Register</a></li>
                             @endguest
                             @auth
@@ -73,14 +71,14 @@
         </div>
 
         {{-- Categories and another link --}}
-        <div class="w-full h-[30%] bg-slate-900 border-t-[1px] border-slate-700">
+        <div class="w-full h-[30%] max-w-[90%] lg:max-w-[80%] mx-auto bg-slate-900 border-t-[1px] border-slate-700">
             <ul
-                class="w-full max-w-6xl mx-auto h-[65px] text-white text-sm truncate flex justify-start items-center gap-8">
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="/">Home</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="{{ route("shop") }}">Shopping</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">About Us</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">Contact Us</a></li>
-                <li class="hover:bg-amber-900 h-[100%] flex items-center"><a href="">FAQs</a></li>
+                class="w-full h-[65px] text-white text-sm truncate flex justify-start items-center gap-8">
+                <li class=" flex items-center"><a href="/" class="{{ Route::is("home") ? " border-b-4 border-amber-500 text-white font-bold py-1 px-2 rounded-lg":"" }}">Home</a></li>
+                <li class=" flex items-center"><a href="{{ route("shop") }}" class="{{ Route::is("shop") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}">Shopping</a></li>
+                <li class=" flex items-center"><a href="">About Us</a></li>
+                <li class=" flex items-center"><a href="">Contact Us</a></li>
+                <li class=" flex items-center"><a href="">FAQs</a></li>
             </ul>
         </div>
 
