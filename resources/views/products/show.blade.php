@@ -20,7 +20,7 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
         {{-- prod details --}}
         <form method="post" action="" class="w-full  flex py-4">
             {{-- image --}}
-            <div class="w-[50%]"><img src="" alt="image"></div>
+            <div class="w-full flex justify-center items-center rounded-md"><img src="{{ asset('storage/' . $product->image) }}" alt="image" class="w-[50%] rounded-lg"></div>
             <div class="w-[50%] px-4 space-y-8">
                 {{-- title --}}
                 <p class="capitalize text-2xl text-blue-400 font-bold "> {{ $product->name }} </p>
