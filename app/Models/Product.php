@@ -23,10 +23,10 @@ class Product extends Model
     }
     public function midCategories(): BelongsTo
     {
-        return $this->belongsTo(midCategory::class, "mid_category_id");
+        return $this->belongsTo(MidCategory::class, "mid_category_id");
     }
     public function endCategories(): BelongsTo
     {
-        return $this->belongsTo(endCategory::class, "end_category_id");
+        return $this->belongsTo(EndCategory::class, "end_category_id");
     }
 }

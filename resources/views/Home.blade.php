@@ -19,7 +19,7 @@
 
         {{-- Features --}}
         <section class="px-6 py-12">
-            <h3 class="text-2xl font-bold mb-6">Featured Products</h3>
+            <h3 class="text-2xl text-white font-bold mb-6">Featured Products</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <!-- Product Card -->
               <div class="bg-gray-800 rounded-lg p-4 shadow hover:shadow-blue-600 transition">

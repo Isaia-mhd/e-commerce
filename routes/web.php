@@ -31,7 +31,7 @@ Route::post("/subscribe", [SubscriberController::class, "subscribe"])->name("sub
 // PRODUCTS
     Route::post("/shopping/search/", [ProductController::class, "search",])->name("search");
     Route::get("/shopping", [ProductController::class, "index",])->name("shop");
-    Route::get("/shopping/top-cat/{slug}", [ProductController::class, "getTopCategories",])->name("top-category");
+    Route::get("/shopping/tops/{slug}", [ProductController::class, "getTopCategories"])->name("top-category");
     Route::get("/shopping/view/product/{product}", [ProductController::class, "show",])->name("show");
     // For link path at the show page
     Route::get("/shopping/{slug}/{category}", [CategoryController::class, "getMidCategories",])->name("mid-category");

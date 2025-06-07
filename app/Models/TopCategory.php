@@ -11,7 +11,7 @@ class TopCategory extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "top_category"
+        "top_category", "slug"
     ];
 
     public function products(): HasMany

@@ -13,9 +13,9 @@
         @include("products.topCategoryList")
 
         {{-- PRODUCT --}}
-        <div class="space-y-3">
+        <div class="space-y-3 w-full">
             {{-- U TITLE --}}
-            <p class="text-2xl text-white">All products</p>
+            <p class="text-2xl text-white">All {{ $endCategory->end_category }} products</p>
             {{-- ALL PRODUCTS BOX --}}
             @include("products.productBox")
         </div>

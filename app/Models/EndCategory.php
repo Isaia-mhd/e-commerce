@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class endCategory extends Model
+class EndCategory extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "end_category"
+        "end_category", "slug"
     ];
 
     public function products(): HasMany

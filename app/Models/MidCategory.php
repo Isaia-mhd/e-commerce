@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class midCategory extends Model
+class MidCategory extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "mid_category"
+        "mid_category", "slug"
     ];
 
     public function products(): HasMany

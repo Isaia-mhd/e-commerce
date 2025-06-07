@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index(){
         $categories = TopCategory::all();
-        $products = Product::paginate();
+        $products = Product::where("active", true)->paginate();
         return view("products.all_products", compact("categories", "products"));
     }
 
@@ -20,7 +20,7 @@ class ProductController extends Controller
         $topCategory = TopCategory::where("slug", $slug)->first();
 
 
-        $products = Product::where("top_category_id", 1)->paginate(15);
+        $products = Product::where("top_category_id", $topCategory->id)->paginate(15);
 
         $categories = TopCategory::orderBy("created_at", "ASC")->get();
         // dd($topCategory, $categories);

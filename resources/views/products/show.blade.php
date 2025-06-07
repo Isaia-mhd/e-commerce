@@ -10,10 +10,10 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
     {{-- path link at the top --}}
     <div class="w-full max-w-[85%] mx-auto">
         <p class="text-blue-400">
-            <a href="{{route("shop") }}">Shopping</a> >
-            <a href="{{ route("top-category", $product->topCategories->slug) }}"> {{ $product->topCategories->top_category }} </a> >
-            <a href="{{ route("mid-category", [$product->topCategories->slug, Str::lower($product->midCategories->mid_category)] ) }}">{{ $product->midCategories->mid_category }}</a> >
-            <a href="{{ route("end-category", [$product->topCategories->slug, Str::lower($product->midCategories->mid_category), Str::lower($product->endCategories->end_category)] ) }}">{{ $product->endCategories->end_category }}</a> >
+            <a href="{{route("shop") }}">Shopping</a> <span class="text-white">></span>
+            <a href="{{ route("top-category", $product->topCategories->slug) }}"> {{ $product->topCategories->top_category }} </a> <span class="text-white">></span>
+            <a href="{{ route("mid-category", [$product->topCategories->slug, Str::lower($product->midCategories->mid_category)] ) }}">{{ $product->midCategories->mid_category }}</a> <span class="text-white">></span>
+            <a href="{{ route("end-category", [$product->topCategories->slug, Str::lower($product->midCategories->mid_category), Str::lower($product->endCategories->end_category)] ) }}">{{ $product->endCategories->end_category }}</a> <span class="text-white">></span>
             <a href="">{{ Str::title($product->name) }}</a>
         </p>
 
