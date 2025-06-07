@@ -18,7 +18,8 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
         </p>
 
         {{-- prod details --}}
-        <form method="post" action="" class="w-full  flex py-4">
+        <form method="post" action="{{ route("basket.new", $product->id) }}" class="w-full  flex py-4">
+            @csrf
             {{-- image --}}
             <div class="w-full flex justify-center items-center rounded-md"><img src="{{ asset('storage/' . $product->image) }}" alt="image" class="w-[50%] rounded-lg"></div>
             <div class="w-[50%] px-4 space-y-8">
@@ -29,7 +30,7 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
                 {{-- size --}}
                 <div class="flex flex-col gap-1">
                     <label for="size" class="text-gray-300 font-bold">Select Size</label>
-                    <select name="size" id="size" class="w-20 bg-slate-800 text-white">
+                    <select name="size" id="size" class="w-[200px] bg-slate-800 text-white">
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
@@ -37,7 +38,7 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
                 {{-- color --}}
                 <div class="flex flex-col gap-1">
                     <label for="color" class="text-gray-300 font-bold">Select Color</label>
-                    <select name="color" id="color" class="w-28 bg-slate-800 text-white">
+                    <select name="color" id="color" class="w-[200px] bg-slate-800 text-white">
                         <option value="Blue">Blue</option>
                         <option value="Black">Black</option>
                     </select>
@@ -50,7 +51,10 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
                 {{-- Quantity --}}
                 <div class="flex flex-col gap-1">
                     <label for="quant" class="text-gray-300 font-bold">Quantity</label>
-                    <input type="number" name="quantity" min="1" id="quant" class="w-20 bg-slate-800 text-white">
+                    <input type="number" name="quantity" min="1" id="quant" class="w-[200px] bg-slate-800 text-white">
+                    @error("quantity")
+                        <span class="text-sm text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
                 {{-- Button add to cart --}}
                 <button type="submit" class="bg-blue-500 rounded-sm text-white px-3 font-semibold py-1">Add To Cart</button>

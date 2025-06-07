@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Products\CategoryController;
 use App\Http\Controllers\Products\ProductController;
@@ -32,6 +33,11 @@ Route::post("/subscribe", [SubscriberController::class, "subscribe"])->name("sub
 
 
 Route::middleware('auth')->group(function () {
+    Route::get("baskets", [BasketController::class, 'index'])->name("basket.list");
+    Route::post("baskets/new/{product}", [BasketController::class, 'store'])->name("basket.new");
+    Route::delete("baskets/delete/{basket}", [BasketController::class, 'destroy'])->name("basket.delete");
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

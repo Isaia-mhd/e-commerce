@@ -52,9 +52,9 @@
                                         href="{{ route("register")}}">Register</a></li>
                             @endguest
                             @auth
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm"><i></i><a href="">Profile</a></li>
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm"><i
-                                    class="fa-solid fa-cart-shopping"></i><a href="">20$</a></li>
+                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm {{ Route::is("profile") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><i></i><a href="">Profile</a></li>
+                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm {{ Route::is("basket.list") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><i
+                                    class="fa-solid fa-cart-shopping"></i><a href="{{ route("basket.list") }}">20$</a></li>
                                 <form action="{{  route("logout")}}" method="POST">
                                     @csrf
                                     <button type="submit" class="text-red-500 text-sm font-semibold flex items-center justify-center gap-2" title="Logout"><i class="fa-solid fa-power-off"></i>Logout</button>
