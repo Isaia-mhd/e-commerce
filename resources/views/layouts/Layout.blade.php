@@ -85,9 +85,9 @@
         </div>
 
     </header>
-    <div class="text-white bg-black w-full h-[50px] flex items-center justify-center">
+    {{-- <div class="text-white bg-black w-full h-[50px] flex items-center justify-center">
         @yield('u-title')
-    </div>
+    </div> --}}
 
 
 

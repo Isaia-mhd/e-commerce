@@ -14,9 +14,9 @@
 
 
         {{-- PRODUCT --}}
-        <div class="space-y-3">
+        <div class="space-y-3 w-full">
             {{-- U TITLE --}}
-            {{-- <p class="text-2xl text-white"></p> --}}
+            <p class="text-2xl text-white">The results of {{ request()->get('search') }}</p>
             {{-- ALL PRODUCTS BOX --}}
             @include("products.productBox")
             @if (count($products) == 0)

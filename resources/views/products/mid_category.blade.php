@@ -4,7 +4,7 @@
     {{ $midCategory->mid_category }}
 @endsection
 @section('u-title')
-    Category: {{ $midCategory->mid_category }}
+    {{ $midCategory->mid_category }}
 @endsection
 @section('content')
     @include("components.success")
@@ -15,7 +15,7 @@
         {{-- PRODUCT --}}
         <div class="space-y-3 w-full">
             {{-- U TITLE --}}
-            <p class="text-2xl text-white">All {{ $midCategory->mid_category }} products</p>
+            <p class="text-2xl text-white">{{ $midCategory->mid_category }} products</p>
             {{-- ALL PRODUCTS BOX --}}
             @include("products.productBox")
         </div>
