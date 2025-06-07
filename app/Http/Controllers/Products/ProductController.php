@@ -28,7 +28,7 @@ class ProductController extends Controller
         $topCategory = TopCategory::where("slug", $slug)->first();
 
         $page = request()->get('page', 1);
-        $products = Cache::remember("products-page-$page", 20,fn() => Product::where("top_category_id", $topCategory->id)->paginate(15));
+        $products = Cache::remember("products-page-$page-$topCategory->id", 20,fn() => Product::where("top_category_id", $topCategory->id)->paginate(15));
 
         $categories = Cache::remember("topCategories", 20, fn() => TopCategory::oldest()->get());
 

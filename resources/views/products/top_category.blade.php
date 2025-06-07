@@ -21,6 +21,14 @@
 
             {{-- Pagination LINK --}}
             @include('components.paginationLinks')
+
+            {{-- If No Product found --}}
+            @if (count($products) == 0)
+                <div class="w-full h-full  flex justify-center items-center">
+                    <p class="text-lg text-amber-400">No results founds</p>
+
+                </div>
+            @endif
         </div>
     </div>
 @endsection
