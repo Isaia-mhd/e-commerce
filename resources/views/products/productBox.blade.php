@@ -20,8 +20,8 @@
     @endforeach
 
     {{-- Pagination LINK --}}
-    <div class="w-full text-sm flex justify-between text-left">
-        {{ $products->links("pagination::tailwind") }}
-    </div>
+</div>
+<div class="mt-3 w-full ">
+    {{ $products->withQueryString()->links() }}
 </div>
 
