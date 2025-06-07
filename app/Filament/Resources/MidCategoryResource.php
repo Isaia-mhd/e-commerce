@@ -36,6 +36,7 @@ class MidCategoryResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make("id"),
                 TextColumn::make("mid_category"),
                 TextColumn::make("slug"),
             ])

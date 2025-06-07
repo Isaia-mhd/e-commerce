@@ -36,6 +36,7 @@ class EndCategoryResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make("id"),
                 TextColumn::make("end_category"),
                 TextColumn::make("slug"),
             ])

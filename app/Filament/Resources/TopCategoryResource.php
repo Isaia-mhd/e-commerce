@@ -36,6 +36,7 @@ class TopCategoryResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make("id"),
                 TextColumn::make("top_category"),
                 TextColumn::make("slug"),
             ])
