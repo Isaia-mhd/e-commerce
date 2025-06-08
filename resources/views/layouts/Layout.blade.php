@@ -38,7 +38,7 @@
         {{-- Main nav --}}
         <div class="w-full py-2 max-w-[90%] lg:max-w-[80%] mx-auto">
             <div class="w-full lg:flex justify-between items-center">
-                <div class="w-[100%] flex justify-center lg:justify-start items-center text-blue-500 text-2xl">
+                <div class="w-[100%] flex justify-center lg:justify-start items-center text-amber-400 text-2xl">
                     {{-- <img class="" src="/Logo.png" alt="Logo"> --}}
                     {{ config("app.name") }}
                 </div>
@@ -46,14 +46,14 @@
                     <div class=" w-full">
                         <ul class="w-[100%] mx-auto flex justify-center items-center gap-5">
                             @guest
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium {{ Route::is("login") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><a
+                                <li class="flex items-center justify-center gap-1  text-white font-medium {{ Route::is("login") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><a
                                         href="{{ route("login")}}">Login</a></li>
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium {{ Route::is("register") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><a
+                                <li class="flex items-center justify-center gap-1  text-white font-medium {{ Route::is("register") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><a
                                         href="{{ route("register")}}">Register</a></li>
                             @endguest
                             @auth
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm {{ Route::is("profile") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><i></i><a href="">Profile</a></li>
-                                <li class="flex items-center justify-center gap-1  text-blue-400 font-medium text-sm {{ Route::is("basket.list") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><i
+                                <li class="flex items-center justify-center gap-1  text-white font-medium text-sm {{ Route::is("profile") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><i></i><a href="">Profile</a></li>
+                                <li class="flex items-center justify-center gap-1  text-white font-medium text-sm {{ Route::is("basket.list") ? " border-b-4 border-amber-500  text-white font-bold py-1 px-2 rounded-lg":"" }}"><i
                                     class="fa-solid fa-cart-shopping"></i><a href="{{ route("basket.list") }}">20$</a></li>
                                 <form action="{{  route("logout")}}" method="POST">
                                     @csrf

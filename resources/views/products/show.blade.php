@@ -18,53 +18,57 @@ Category : <p class="text-green-500"> {{ $product->endCategories->end_category }
         </p>
 
         {{-- prod details --}}
-        <form method="post" action="{{ route("basket.new", $product->id) }}" class="w-full  flex py-4">
+        <form method="post" action="{{ route("basket.new", $product->id) }}" class="w-full md:flex xs:flex-col xs:justify-center items-center py-4">
             @csrf
             {{-- image --}}
-            <div class="w-full flex justify-center items-center rounded-md"><img src="{{ asset('storage/' . $product->image) }}" alt="image" class="w-[50%] rounded-lg"></div>
-            <div class="w-[50%] px-4 space-y-8">
+            <div class="w-full flex justify-center items-center rounded-md mb-6"><img src="{{ asset('storage/' . $product->image) }}" alt="image" class="w-[60%] md:w-[50%] rounded-lg"></div>
+            <div class="w-full px-4 space-y-8 flex flex-col justify-center items-start">
                 {{-- title --}}
                 <p class="capitalize text-2xl text-blue-400 font-bold "> {{ $product->name }} </p>
-                {{-- slug --}}
-                <p class="truncate text-sm text-white"> {{ $product->description }} </p>
+
                 {{-- size --}}
-                <div class="flex flex-col gap-1">
+                <div class="w-full flex flex-col gap-1">
                     <label for="size" class="text-gray-300 font-bold">Select Size</label>
-                    <select name="size" id="size" class="w-[200px] bg-slate-800 text-white">
+                    <select name="size" id="size" class="w-full lg:w-[50%] bg-slate-800 text-white">
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
                 </div>
                 {{-- color --}}
-                <div class="flex flex-col gap-1">
+                <div class="w-full flex flex-col gap-1">
                     <label for="color" class="text-gray-300 font-bold">Select Color</label>
-                    <select name="color" id="color" class="w-[200px] bg-slate-800 text-white">
+                    <select name="color" id="color" class="w-full lg:w-[50%] bg-slate-800 text-white">
                         <option value="Blue">Blue</option>
                         <option value="Black">Black</option>
                     </select>
                 </div>
                 {{-- price --}}
-                <div class="">
+                <div class="w-full">
                     <p class="text-gray-300 font-bold">Product Price</p>
                     <p class="text-2xl font-semibold text-green-600"> <strike class="text-gray-400">${{ $product->old_price }}</strike> ${{ $product->price }}</p>
                 </div>
                 {{-- Quantity --}}
-                <div class="flex flex-col gap-1">
+                <div class="w-full flex flex-col gap-1">
                     <label for="quant" class="text-gray-300 font-bold">Quantity</label>
-                    <input type="number" name="quantity" min="1" id="quant" class="w-[200px] bg-slate-800 text-white">
+                    <input type="number" name="quantity" min="1" id="quant" class="w-full lg:w-[50%] bg-slate-800 text-white">
                     @error("quantity")
                         <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
-                {{-- Button add to cart --}}
-                <button type="submit" class="bg-blue-500 rounded-sm text-white px-3 font-semibold py-1">Add To Cart</button>
+
+
+                <button type="submit" class="bg-amber-400 hover:bg-amber-500 text-slate-800 font-semibold py-2 px-4 rounded-lg shadow-md transition duration-200">
+                    Add to Cart
+                </button>
 
             </div>
         </form>
+
+
         {{-- DESCRIPTION OF PRODUCT --}}
         <div class="">
-            <p class="text-gray-300 text-xl">Product Description</p>
-            <p class="text-white">{{ $product->description }}</p>
+            <p class="text-amber-400 text-xl">Product Description</p>
+            <p class="text-gray-400">{{ $product->description }}</p>
         </div>
 
         {{-- RELATED PRODUCTS --}}
